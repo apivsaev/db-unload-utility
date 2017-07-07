@@ -1,2 +1,11 @@
+# Exclusions for Idea
 .idea/
 *.iml
+
+# Exclusions for Eclipse
+.settings/
+.classpath
+.project
+
+# Exclusions for build files
+target/
