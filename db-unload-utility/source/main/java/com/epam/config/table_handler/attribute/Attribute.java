@@ -1,27 +1,22 @@
-package com.epam.config.cmd_handler.table_handler;
-
-import java.util.ArrayList;
+package com.epam.config.table_handler.attribute;
 
 public class Attribute {
-    private ArrayList<Attribute> attributes = null;
-    private int attrno = 0;
-    private String attrname = "";
+    private Integer attrno = null;
+    private String attrname = null;
+    //TODO: Custom type
+    private String attrtp = null;
     private Integer attrln = null;
     private Integer attrprc = null;
     //TODO: Custom type
     private String attrdepers = null;
 
-    public Attribute(ArrayList<Attribute> attributes, int attrno, String attrname, Integer attrln, Integer attrprc, String attrdepers) {
-        this.attributes = attributes;
+    public Attribute(Integer attrno, String attrname, String attrtp, Integer attrln, Integer attrprc, String attrdepers) {
         this.attrno = attrno;
         this.attrname = attrname;
+        this.attrtp = attrtp;
         this.attrln = attrln;
         this.attrprc = attrprc;
         this.attrdepers = attrdepers;
-    }
-
-    public ArrayList<Attribute> getAttributes() {
-        return attributes;
     }
 
     public int getAttrno() {

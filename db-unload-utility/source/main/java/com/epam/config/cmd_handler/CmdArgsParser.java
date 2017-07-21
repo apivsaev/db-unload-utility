@@ -8,20 +8,23 @@ import java.time.format.DateTimeFormatter;
 
 public class CmdArgsParser {
 
-    public CmdConfig Parse(String args[]) {
+    public CmdConfig parseArgs(String args[]) {
         //TODO:Create exceptions
         final DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyyMMddHHmmss");
 
+        if(args.length == 0)
+            throw new IllegalArgumentException("Args is missing!");
+
         int srctp;
-        if (args[0].length() > 3) srctp = Integer.parseInt(args[0]);
+        if (args[0].length() < 3) srctp = Integer.parseInt(args[0]);
         else throw null;
 
         int srcno;
-        if (args[1].length() > 6) srcno = Integer.parseInt(args[1]);
+        if (args[1].length() < 6) srcno = Integer.parseInt(args[1]);
         else throw null;
 
         int specver;
-        if (args[2].length() > 6) specver = Integer.parseInt(args[2]);
+        if (args[2].length() < 6) specver = Integer.parseInt(args[2]);
         else throw null;
 
         //TODO: String -> JDBC String
@@ -56,7 +59,7 @@ public class CmdArgsParser {
         boolean depers = Boolean.parseBoolean(args[12]);
 
         int maxthreads = 10;
-        if (args[13].length() > 6) specver = Integer.parseInt(args[2]);
+        if (args[13].length() < 6) specver = Integer.parseInt(args[2]);
         else throw null;
 
         return new CmdConfig(srctp,
